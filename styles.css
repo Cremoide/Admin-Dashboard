@@ -1,6 +1,5 @@
 body,
 html {
-  overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -17,14 +16,12 @@ svg {
 }
 
 .container {
-
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  overflow: hidden;
   text-align: left;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 1fr 5fr;
 }
 
@@ -35,7 +32,7 @@ svg {
 /* HEADER */
 
 .header {
-  padding: 6px 12px;
+  padding: 0 18px;
   font-size: 1rem;
   grid-column: 2 / 3;
   display: grid;
@@ -55,10 +52,20 @@ svg {
   align-items: center;
 }
 
-.header .account {
-    grid-column: 2 / 3;
+.header input {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  background-color: #E2E8F0;
+  border: none;
+  border-radius: 25px;
+  padding: 0;
+}
 
-  justify-content: center;
+.header .account {
+  grid-column: 2 / 3;
+
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -66,7 +73,7 @@ svg {
 
 .sidebar {
   padding: 16px;
-  background-color: #1992D3;
+  background-color: #5D41DE;
   grid-column: 1 / 2;
   grid-row: 1 / 4;
 }
@@ -86,14 +93,14 @@ svg {
   font-size: 1rem;
   list-style-type: none;
   display: grid;
-  gap: 20px;
-  padding-left: 0;
+  gap: 18px;
+  padding-left: 8px;
 }
 
 /* NAV */
 
 .nav {
-  padding: 6px 12px;
+  padding: 0 18px;
   font-size: 1rem;
   font-weight: 300;
   
@@ -103,7 +110,6 @@ svg {
 }
 
 .nav div {
-
   display: flex;
   align-items: center;
   gap: 12px;
@@ -123,13 +129,13 @@ svg {
 
 .ht span {
   text-transform: uppercase;
-  font-size: smaller;
+  font-size: .6em;
 }
 
 .ht p {
   margin: 0;
-  font-size: large;
-
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .nav .btn {
@@ -170,30 +176,55 @@ svg {
   display: grid;
   grid-template: 1fr 1fr / 3fr 1fr;
   gap: 12px;
-  background-color: rgb(204, 204, 204);
-}
-
-.article div {
-  border: solid 1px black;
-  padding: 8px;
-  gap: 12px;
+  background-color: #E2E8F0;
 }
 
 .article .projects {
-  grid-row: 1 / -3;
+  padding: 0 18px;
+  grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
 }
 
 .projects .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 8px;
 }
 
 .card {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+
   background-color: white;
 }
+
+.card .text {
+  font-size: .6em;
+  font-weight: 300;
+  margin: 2px 0;
+}
+
+.text h3 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 1.6em;
+  margin: 0;
+}
+
+.card .buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  gap: 18px;
+}
+
 
 .article .announcements {
   grid-row: 1 / 2;
@@ -202,6 +233,34 @@ svg {
   flex-direction: column;
 }
 
+.announcements .item {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+
+  background-color: white;
+}
+
+.announcements .item span {
+  font-weight: 600;
+  font-size: .8em;
+  margin: 0;
+}
+
+.announcements .item p {
+  font-size: .6em;
+  font-weight: 300;
+  margin: 2px 0;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+
 .article .trending {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
@@ -209,17 +268,23 @@ svg {
   flex-direction: column;
 }
 
-.article span {
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: sans-serif;
-  color: black;
-  text-align: left;
+.article .item {
+  border-radius: 5px;
+  display: grid;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
 }
 
-.article p {
-  font-size: 0.8rem;
-  font-family: sans-serif;
-  color: black;
-  text-align: left;
+.article .item span {
+  font-weight: 600;
+  font-size: .8em;
+  margin: 0;
+}
+
+.article .item p {
+  font-size: .8em;
+  font-weight: 300;
+  margin: 2px 0;
 }
